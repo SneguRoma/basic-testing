@@ -23,7 +23,7 @@ describe('throttledGetDataFromApi', () => {
 
   test('should perform request to correct provided url', async () => {
     const expectedUrl = '/posts/1';
-    jest.advanceTimersByTime(5000);
+    jest.runAllTimers();
 
     const axiosCreateSpy = jest
       .spyOn(axios.Axios.prototype, 'get')
@@ -36,7 +36,7 @@ describe('throttledGetDataFromApi', () => {
 
   test('should return response data', async () => {
     const expectedUrl = '/posts/1';
-    jest.advanceTimersByTime(5000);
+    jest.runAllTimers();
 
     jest
       .spyOn(axios.Axios.prototype, 'get')
