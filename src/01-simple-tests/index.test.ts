@@ -3,15 +3,17 @@ import { simpleCalculator, Action } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    expect(simpleCalculator({ a: 1, b: 2, action: Action.Add })).toBe(3);
+    expect(simpleCalculator({ a: -1, b: 2, action: Action.Add })).toBe(1);
   });
 
   test('should subtract two numbers', () => {
-    expect(simpleCalculator({ a: 5, b: 2, action: Action.Subtract })).toBe(3);
+    expect(simpleCalculator({ a: 5, b: -2, action: Action.Subtract })).toBe(7);
   });
 
   test('should multiply two numbers', () => {
-    expect(simpleCalculator({ a: 5, b: 2, action: Action.Multiply })).toBe(10);
+    expect(simpleCalculator({ a: 5, b: -2, action: Action.Multiply })).toBe(
+      -10,
+    );
   });
 
   test('should divide two numbers', () => {
